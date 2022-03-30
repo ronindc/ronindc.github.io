@@ -82,7 +82,7 @@
             
             for (let _i = 0; _i < _containers.length; _i++)
             {
-                const _slidesNumberTexts = document.getElementsByClassName("modal-my-sides").getElementsByClassName("number-text");
+                const _slidesNumberTexts = document.getElementsByClassName("modal-my-slides").getElementsByClassName("number-text");
                 let _maxSlideCount = document.getElementsByClassName("demo").length;
 
                 for (let _j = 0; _j < _slidesNumberTexts.length; _j++)
