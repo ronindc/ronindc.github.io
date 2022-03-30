@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://use.fontawesome.com/26cae65490.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../css/gallery.css">
+        <link rel="stylesheet" href="../css/modal.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700&display=swap" rel="stylesheet"> 
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css" class="">
+        <title>Darnell's Website - Photo Gallery</title>
+    </head>
+    <body>
+        <section class="header">
+            <nav>
+                <div class="nav-links" id="nav-links-id">
+                    <i class="fa fa-times" onclick="HideMenu()"></i>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="#">Gallery</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <i class="fa fa-bars" onclick="ShowMenu()"></i>
+            </nav>
+
+            <div class="text-box">
+                <h1>Gallery</h1>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+            </div>
+        </section>
+
+
+        <!-- ------ Gallery ------ -->
+        <section class="gallery-container">
+            <h1>Photos</h1>
+            <p> Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+
+            <div class="gallery-container-row">
+                <div><button class="scroller left" onclick="Scroll('gallery-container-row', '.gallery-container-row-contents', 0, -350)"><i class="fa fa-angle-double-left"></i></button></div>
+                <div><button class="scroller right" onclick="Scroll('gallery-container-row', '.gallery-container-row-contents', 0, 350)"><i class="fa fa-angle-double-right"></i></button></div>
+
+                [MODAL_CONTAINER_INSERTION_POINT]
+
+                <div class="gallery-container-row-contents">
+                    [GALLERY_CONTAINER_ROW_CONTENTS_INSERTION_POINT]
+                </div>
+            </div>
+        </section>
+
+        <!-- ------ Footer ------ -->
+
+        <section class="footer">
+
+        </section>
+
+        <!-- ------Javascript for toggle menu------ -->
+        <script>
+            var _navLinks = document.getElementById("nav-links-id");
+
+            function ShowMenu()
+            {
+                _navLinks.style.right = "0";
+            }
+            function HideMenu()
+            {
+                _navLinks.style.right = "-200px";
+            }
+        </script>
+
+        <!-- ------ Javascript for Photo Gallery ------ -->
+        <script>
+            var _containers = document.getElementsByClassName("modal-container");
+            var _slideIndex = 1;
+
+            for (let _i = 0; _i < _containers.length; _i++)
+            {
+                ShowSlides(_i, _slideIndex);
+            }
+            
+            for (let _i = 0; _i < _containers.length; _i++)
+            {
+                const _slidesNumberTexts = document.getElementsByClassName("modal-my-sides").getElementsByClassName("number-text");
+                let _maxSlideCount = document.getElementsByClassName("demo").length;
+
+                for (let _j = 0; _j < _slidesNumberTexts.length; _j++)
+                {
+                    _slidesNumberTexts.innerHTML = _i + " / " + _maxSlideCount;
+                }
+            }
+
+            // Next/Prev Controls
+            function PlusSlides(_containerIndex, _n)
+            {
+                let _container = _containers[_containerIndex];
+
+                let _slides = _container.getElementsByClassName("modal-my-slides");
+                let _slideCount = _slides.length;
+
+                if (_slideIndex + _n > _slideCount)
+                {
+                    _slideIndex = 1;
+                }
+                else if (_slideIndex + _n < 1)
+                {
+                    _slideIndex = _slides.length;
+                }
+                else
+                {
+                    _slideIndex += _n;
+                }
+
+                ShowSlides(_containerIndex, _slideIndex);
+            }
+
+            function CurrentSlide(_containerIndex, _n)
+            {
+                _slideIndex = _n;
+                ShowSlides(_containerIndex, _slideIndex);
+            }
+
+            function ShowSlides(_containerIndex, _n) 
+            {
+                let _container = _containers[_containerIndex];
+                
+                let _i;
+                let _slides = _container.getElementsByClassName("modal-my-slides");
+
+                let _dots = _container.getElementsByClassName("demo");
+                let _captionText = _container.getElementsByTagName("p");
+
+                const _numberText = _slides[_slideIndex - 1].getElementsByClassName("number-text").item(0);
+
+                for (_i = 0; _i < _slides.length; _i++)
+                {
+                    _slides[_i].style.display = "none";
+                    _dots[_i].className = _dots[_i].className.replace(" active", "");
+                }
+
+                _slides[_slideIndex - 1].style.display = "block";
+                _dots[_slideIndex-1].className += " active";
+                _captionText.item(0).innerHTML = _dots[_slideIndex-1].alt;
+            }
+        </script>
+
+        <!-- ------ Javascript for Slideshow Scroll Buttons ------ -->
+        <script>
+            // function Scroll(_containerIndex, _amount)
+            // {
+            //     let _containers = document.getElementsByClassName("container");
+            //     var _scroll = _containers[_containerIndex].querySelector(".gallery-slideshow-row");
+            //     _scroll.scrollBy(_amount, 0);
+            // }
+
+            function Scroll(_className, _cssName,  _index, _amount)
+            {
+                let _scrollables = document.getElementsByClassName(_className);
+                var _scrollable = _scrollables[_index].querySelector(_cssName);
+                _scrollable.scrollBy(_amount, 0);
+            }
+        </script>
+        
+        <!-- ------ Javascript for Modal Window ------ -->
+        <script>
+            function OpenModal(_index)
+            {
+                let _modal = document.getElementsByClassName("modal-container"); 
+                _modal[_index].style.display = "block";
+            }
+
+            function CloseModal(_index)
+            {
+                let _modal = document.getElementsByClassName("modal-container"); 
+                _modal[_index].style.display = "none";
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,21 @@
+<div class="modal-container">
+    <span class="close" onclick="CloseModal([FOLDER_INDEX])">&times;</span>
+    <div class="modal-container-contents">
+        <h1>[MODAL_CONTAINER_CONTENTS_HEADER]</h1>
+
+        [MY_SLIDES_INSERTION_POINT]
+        
+        <div class="modal-prev" onclick="PlusSlides([FOLDER_INDEX], -1)">&#10094;</div>
+        <div class="modal-next" onclick="PlusSlides([FOLDER_INDEX], 1)">&#10095;</div>
+        <div class="modal-caption-container">
+            <p id="modal-caption"></p>
+        </div>
+        <div class="modal-gallery-slideshow">
+            <div><button class="modal-scroller" onclick="Scroll('modal-gallery-slideshow', '.modal-gallery-slideshow-row', 0, -350)"><i class="fa fa-angle-double-left"></i></button></div>
+            <div><button class="modal-scroller modal-scroller-right" onclick="Scroll('modal-gallery-slideshow', '.modal-gallery-slideshow-row', 0, 350)"><i class="fa fa-angle-double-right"></i></button></div>
+            <div class="modal-gallery-slideshow-row">
+                [MODAL_GALLERY_SLIDESHOW_COLUMN_INSERTION_POINT]
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,10 @@
+<div class="gallery-container-column" onclick="OpenModal(0)"><p>Bogota _Centro Historico_Monserrat</p><img src="..\images\Bogota _Centro Historico_Monserrat\20211112_094531.jpg"></div>
+<div class="gallery-container-column" onclick="OpenModal(1)"><p>Canaveral</p><img src="..\images\Canaveral\20210101_105959.mp4"></div>
+<div class="gallery-container-column" onclick="OpenModal(2)"><p>cartagena</p><img src="..\images\cartagena\20190409_174659.jpg"></div>
+<div class="gallery-container-column" onclick="OpenModal(3)"><p>Los Cocos</p><img src="..\images\Los Cocos\20201228_063628.mp4"></div>
+<div class="gallery-container-column" onclick="OpenModal(4)"><p>Minca</p><img src="..\images\Minca\20190411_123045.jpg"></div>
+<div class="gallery-container-column" onclick="OpenModal(5)"><p>Parque Tayrona_Santa Marta</p><img src="..\images\Parque Tayrona_Santa Marta\20180925_093833.jpg"></div>
+<div class="gallery-container-column" onclick="OpenModal(6)"><p>Playa Cristal</p><img src="..\images\Playa Cristal\20180926_091032.jpg"></div>
+<div class="gallery-container-column" onclick="OpenModal(7)"><p>Rodadero Beach_Playa Blanca</p><img src="..\images\Rodadero Beach_Playa Blanca\20181126_115132.jpg"></div>
+<div class="gallery-container-column" onclick="OpenModal(8)"><p>Salt Mine</p><img src="..\images\Salt Mine\20211113_120330.jpg"></div>
+<div class="gallery-container-column" onclick="OpenModal(9)"><p>Taganga</p><img src="..\images\Taganga\20180929_112940.jpg"></div>

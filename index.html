@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://use.fontawesome.com/26cae65490.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700&display=swap" rel="stylesheet"> 
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css" class="">
+        <title>Darnell's Website - Photo Gallery</title>
+    </head>
+    <body>
+        <section class="header">
+            <nav>
+                <div class="nav-links" id="nav-links-id">
+                    <i class="fa fa-times" onclick="HideMenu()"></i>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="pages/gallery-generated.html">Gallery</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <i class="fa fa-bars" onclick="ShowMenu()"></i>
+            </nav>
+
+            <div class="text-box">
+                <h1>Darnell's Gallery</h1>
+                <p>
+                    Welcome to my site, I hope you enjoy the pictures I've taken throughout my travels!
+                </p>
+                <a href="pages/gallery.html" class="hero-btn">Explore</a>
+            </div>
+        </section>
+
+
+        <!-- ------ Gallery ------ -->
+        <section class="fav-photos">
+            <h1>My Favorite Photos</h1>
+            <p> Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+
+            <div class="fav-photos-row">
+                <div class="fav-photos-column">
+                    <img src="images\Finca\20211219_081057.jpg">
+                </div>
+                <div class="fav-photos-column">
+                    <h3>Colombia</h3>
+                    <p>
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Soluta molestiae quia iusto omnis quae nesciunt veniam ducimus. Aliquam eius doloribus reprehenderit, ipsa qui fugit impedit tenetur ab eos molestias similique!
+                    </p>
+                </div>
+            </div>
+            <div class="fav-photos-row">
+                <div class="fav-photos-column">
+                    <h3>Canaveral</h3>
+                    <p>
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Soluta molestiae quia iusto omnis quae nesciunt veniam ducimus. Aliquam eius doloribus reprehenderit, ipsa qui fugit impedit tenetur ab eos molestias similique!
+                    </p>
+                </div>
+                <div class="fav-photos-column">
+                    <img src="images\Canaveral\20210101_111900.jpg">
+                </div>
+            </div>
+            <div class="fav-photos-row">
+                <div class="fav-photos-column">
+                    <img src="images\Cartagena\20190409_174659.jpg">
+                </div>
+                <div class="fav-photos-column">
+                    <h3>Cartagena</h3>
+                    <p>
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Soluta molestiae quia iusto omnis quae nesciunt veniam ducimus. Aliquam eius doloribus reprehenderit, ipsa qui fugit impedit tenetur ab eos molestias similique!
+                    </p>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ------ Footer ------ -->
+
+        <section class="footer">
+
+        </section>
+
+        <!-- ------Javascript for toggle menu------ -->
+        <script>
+            var _navLinks = document.getElementById("nav-links-id");
+
+            function ShowMenu()
+            {
+                _navLinks.style.right = "0";
+            }
+            function HideMenu()
+            {
+                _navLinks.style.right = "-200px";
+            }
+        </script>
+    </body>
+</html>

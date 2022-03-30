@@ -1,0 +1,350 @@
+:root
+{
+    --max-image-height: 2184px;
+}
+
+/* ------ Gallery Page ------ */
+*
+{
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+}
+
+.header
+{
+    min-height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url(../images/banner.jpg);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+.footer
+{
+    min-height: 25vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7));
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+
+nav
+{
+    display: flex;
+    padding: 2% 6%;
+    justify-content: space-between;
+    align-items: center;
+}
+.nav-links
+{
+    flex: 1;
+    text-align: right;
+
+}
+.nav-links ul li
+{
+    list-style: none;
+    display: inline-block;
+    padding: 8px 12px;
+    position: relative;
+}
+.nav-links ul li a
+{
+    color: white;
+    text-decoration: none;
+    font-size: 13px;
+}
+.nav-links ul li::after
+{
+    content: '';
+    width: 0%;
+    height: 2px;
+    background: #f44336;
+    display: block;
+    margin: auto;
+    transition: 0.5s;
+}
+.nav-links ul li:hover::after
+{
+    width: 100%;
+
+}
+.text-box
+{
+    width: 90%;
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.text-box h1
+{
+    font-size: 62px;
+}
+
+.text-box p
+{
+    margin: 10px 0 40px;
+    font-size: 14px;
+    color: white;
+}
+
+.hero-btn
+{
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    border: 1px solid white;
+    padding: 12px 34px;
+    font-size: 13px;
+    background: transparent;
+    position: relative;
+    cursor: pointer;
+}
+
+.hero-btn:hover
+{
+    border: 1px solid #f44336;
+    background: #f44336;
+    transition: 1s;
+}
+
+nav .fa
+{
+    display: none;
+}
+
+@media (max-width: 700px) 
+{
+    .text-box h1
+    {
+        font-size: 20px;
+    }
+    .nav-links ul li
+    {
+        display: block;
+    }
+    .nav-links
+    {
+        position: absolute;
+        background: #f44336;
+        height: 100vh;
+        width: 200px;
+        top: 0;
+        right:-200px;
+        text-align: left;
+        z-index: 2;
+        transition: 1s;
+    }
+    nav .fa
+    {
+        display: block;
+        color: white;
+        margin: 10px;
+        font-size: 22px;
+        cursor: pointer;
+    } 
+    .nav-links ul
+    {
+        padding: 30px;
+    }      
+}
+
+/* Position the image container (needed to position the left and right arrows) */
+
+.gallery
+{
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+}
+
+.gallery p
+{
+    color: black;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 22px;
+    padding: 10px;
+}
+
+.gallery-row
+{
+    margin-top: 5%;
+    display: flex;
+    background: #fff3f3;
+    box-sizing: border-box;
+    border-radius: 10px;
+    justify-content: space-between;
+    transition: 0.5s;
+}
+
+.gallery-column
+{
+    flex-basis: 50%;
+    margin-bottom: 5;
+    padding: 20px 12px;
+}
+
+.gallery-column h3
+{
+    text-align: center;
+    font-weight: 600;
+    margin: 10px 0;
+}
+
+.scroller
+{
+    position: absolute;
+    display: block;
+    cursor: pointer;
+    font-size: 48px;
+    bottom: -435px;
+    color: white;
+
+    background-color: transparent;
+    padding: 0 12px;
+    border: none;
+    border-radius: 0 3px 3px 0;
+
+    z-index: 1;
+    user-select: none;
+    -webkit-user-select: none;
+}
+.scroller:hover
+{
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.left
+{
+    left: 144px;
+}
+.right
+{
+    right: 144px;
+}
+
+/* Six modal-gallery-slideshow-columns side by side */
+.modal-gallery-slideshow-column 
+{
+    /* flex: 16.66%; */
+    max-height: var(--max-image-height);
+    min-width: 12%;
+    height: 8%;
+    border: 1px solid white;
+    overflow: hidden;
+}
+
+@media (max-width: 700px) 
+{
+    .scroller
+    {
+        font-size: 16px;
+    }
+}
+
+/* Add a pointer when hovering over the thumbnail images */
+.cursor 
+{
+    cursor: pointer;
+}
+
+/* Number text (1/3 etc) */
+.number-text 
+{
+    background-color: rgba(0, 0, 0, 0.4);
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+
+    color: #f2f2f2;
+    font-size: 16px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+}
+
+/* ------ Gallery Container ------ */
+.gallery-container
+{
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding-top: 50px;
+}
+.gallery-container h1
+{
+    font-size: 36px;
+    font-weight: 600;
+}
+.gallery-container p
+{
+    color: black;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 22px;
+    padding: 10px;
+}
+
+.gallery-container-row-contents
+{
+    cursor: pointer;
+    margin-top: 5%;
+    display: flex;
+    background: #fff3f3;
+    box-sizing: border-box;
+    border-radius: 10px;
+    justify-content: left;
+    transition: 0.5s;
+    overflow: hidden;
+    scroll-behavior: smooth;
+}
+.gallery-container-row-contents:hover
+{
+    box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.2);
+}
+
+.gallery-container-column
+{
+    flex-basis: 33%;
+    margin-bottom: 5;
+    padding: 14px 12px;
+}
+.gallery-container-column:hover
+{
+    transition: 0.2s;
+    transform: scale(105%);
+    font-weight: 900;
+}
+.gallery-container-column h3
+{
+    text-align: center;
+    font-weight: 600;
+    margin: 10px 0;
+}
+.gallery-container-column img
+{
+    width: 480px;
+    height: 340px;
+    border-radius: 10px;
+}
+
+@media (max-width: 700px) 
+{
+    .gallery-container-row img
+    {
+        width: 260px;
+        height: 170px;
+    }
+
+    .gallery-container h1
+    {
+        font-size: 20px;
+    }
+}
