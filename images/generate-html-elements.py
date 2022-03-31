@@ -41,7 +41,8 @@ def GenerateModalGallerySlideshowColumnArray(filePaths, currentGalleryIndex):
     return elements
 
 def GenerateContainerRowColumnArray(folderName, filePaths, currentGalleryIndex):
-    newElement = galleryContainerRowColumn.replace("[IMAGE_SOURCE]", filePaths[0])
+    print(len(filePaths))
+    newElement = galleryContainerRowColumn.replace("[IMAGE_SOURCE]", filePaths[1])
     newElement = newElement.replace("[FOLDER_INDEX]", str(currentGalleryIndex))
     newElement = newElement.replace("[FOLDER_NAME]", folderName)
     return newElement

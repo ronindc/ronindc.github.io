@@ -1,0 +1,1 @@
+(for %i in (*.jpg) do F:\Tools\ffmpeg\bin\ffmpeg -i %i %~ni.webp)
